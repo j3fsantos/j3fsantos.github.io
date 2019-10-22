@@ -161,7 +161,7 @@ p {
     display:block;
     color:#FFF;
     font-size:11pt;
-    background-color:#A26B6B;
+    background-color:#9d6262;
     line-height:2em;
     text-indent:15px;
     margin-top:5px;
@@ -423,4 +423,24 @@ table.projects th{
 .boxed{
     margin-left:15px;
     border:1px solid #A26B6B;
+}
+
+a:link {
+    color: #9d6262;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #9d6262;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: underline;
 }
