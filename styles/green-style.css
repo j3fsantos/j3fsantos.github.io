@@ -1,0 +1,46 @@
+
+body {
+    background-color:#CDD6C1;
+    color: #8EA86C;
+}
+
+h1 {
+    color: #283A10;
+}
+
+.panel{
+        color:#4D642D;
+        background-color:#fff;
+        box-shadow: 4px 4px 3px #6E7565;
+}
+
+#photo{
+    color:#4D642D;
+}
+
+.headline{
+    color:#FFF;
+/*    background-color:#355135;*/
+    background-color:#A26B6B;
+}
+
+
+#infoBlock .details h3 {
+    color: #A0A2A5;
+}
+
+.tab{
+    color:#acb2bd;
+    background-color:#eee;
+}
+
+.activeTab{
+    color:#283A10;
+    background-color:#FFF;    
+    box-shadow: 4px 4px 3px #6E7565;
+}
+
+
+.content{
+    color:black;
+}

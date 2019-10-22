@@ -1,9 +1,472 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class=" gecko win js"><head>
+    <title>Jose Fragoso Santos: Assistant Professor, DEI, IST</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="computer science, formal methods, verification, symbolic execution, separation logic, IST">
+    <meta name="Description" content="Homepage of Jose Fragoso Santos">
+    <link rel="SHORTCUT ICON" href="images/IST.png">
+    <link rel="stylesheet" type="text/css" href="styles/homepage.css">
+    <link rel="stylesheet" type="text/css" href="styles/green-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/sizing.css">
 
-<head>
-<meta http-equiv="refresh" content="0; url=https://www.doc.ic.ac.uk/~jfaustin/" />
+    <script src="js/css_browser_selector.js" type="text/javascript"> </script>
+
+     <script type="text/javascript" language="javascript">
+     function getHash(){
+         var currentTabName = location.hash.replace("#","");
+         if(currentTabName == ""){
+             currentTabName = "bio"; //this denotes the default tab
+         }
+         var currentTab = document.getElementById(currentTabName + "Tab");
+         activatePanel(currentTab, currentTabName);
+         // alert(currentTab);
+     }
+     </script>
+
+     <script type="text/javascript">
+         function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if(e.style.display != 'none')
+            {
+               e.style.display = 'none';
+            }
+            else
+            {
+               e.style.display = 'inline';
+            }
+         }
+     </script>
+
+     <script type="text/javascript">
+         function showMore(currentButton, myId,id) {
+             toggle_visibility(myId);
+             toggle_visibility(id);
+             var currentText = currentButton.innerHTML;
+             if(currentText == 'show less'){
+                 currentButton.innerHTML = 'show more';
+             }
+             else{
+                 currentButton.innerHTML = 'show less';
+             }
+         }
+     </script>
+
+     <script type="text/javascript">
+         function growDiv(v,u,b) {
+             var growDiv = document.getElementById(v);
+             if (growDiv.clientHeight) {
+               growDiv.style.height = 0;
+             } else {
+               var wrapper = document.getElementById(u);
+               growDiv.style.height = wrapper.clientHeight + "px";
+             }
+         var currentText = b.innerHTML;
+         if(currentText == 'show less'){
+             b.innerHTML = 'show more';
+         }
+         else{
+             b.innerHTML = 'show less';
+         }
+         }
+     </script>
+
+
+     <script type="text/javascript" language="javascript">
+        function switchPubView(outView, inView){
+            //activate the inView
+            var activatePubs = document.getElementById(inView);
+            var elemClass = activatePubs.className;
+            // activatePubs.className = elemClass.replace(/invisible/g,"");
+            activatePubs.className = "";
+
+            //de-activate the outView
+            var deactivatePubs = document.getElementById(outView);
+            deactivatePubs.className = deactivatePubs.className + " invisible";
+        }
+
+     </script>
+    <script type="text/javascript">
+
+        function activatePanel(currentTab, panelId){
+            //Find all panels in the scrolling region
+            var tabPanel = document.getElementById("scrollingPane");
+            var elems = tabPanel.getElementsByTagName('*'),i;
+            for (i in elems){
+                if((" "+elems[i].className+" ").indexOf(" panel ") > -1){
+                    //The command below does not work in IE 9
+                    //elems[i].classList.add('invisible');
+
+                    elems[i].className = elems[i].className + " invisible";
+                }
+            }
+
+            // The command below does not work in IE 9
+            // document.getElementById(panelId).classList.remove('invisible');
+
+            var elemClass = document.getElementById(panelId).className;
+            document.getElementById(panelId).className = elemClass.replace(/invisible/g,"");
+
+            //Find all tabs in the tabContainer region
+            var tabCont = document.getElementById("tabs");
+            var elems2 = tabCont.getElementsByTagName('*'),j;
+            for (j in elems2){
+                if((" "+elems2[j].className+" ").indexOf(" activeTab ") > -1){
+                    // Same problem with IE 9
+                    //elems2[j].classList.remove('activeTab');
+                    var elemClass = elems2[j].className
+                    elems2[j].className = elemClass.replace(/activeTab/g,"");
+                }
+            }
+            // Same problem with IE 9
+            // currentTab.classList.add('activeTab');
+
+            currentTab.className = currentTab.className + " activeTab";
+        }
+    </script>
+
 </head>
-<body>
-This page is automatic redirect to <a href="https://www.doc.ic.ac.uk/~jfaustin/">HERE!</a>
-</body>
-</html>
+
+<body onhashchange="getHash();" onload="getHash();">
+
+
+    <div id="content">
+
+        <div id="fixedPaneLeft">
+            <div class="panel">
+                <div id="hideScroll"><div id="scrollWrapper"><div id="infoWrapper">
+                        <div id="infoBlock">
+                            <div id="photo">
+                            <img src="images/jose.jpg" alt="Jose Fragoso Santos" width="100%">
+                            </div>
+                            <div class="details">
+                                <div id="name">
+                                    <h1>José Fragoso Santos</h1><br>
+                                </div>
+                                <div id="position">
+                                    <h3>Assistant Professor, DEI, IST</h3>
+                                </div>
+                                <div id="address">
+                                    <!-- <p>Associate Professor on Term</p> -->
+                                    <p>Instituto Superior Técnico & INESC-ID</p>
+                                    <p>Avenida Rovisco Pais, 1</p>
+                                    <br>
+                                    <table cellspacing="0px">
+                                        <tbody><tr>
+                                            <td>Email:</td>
+                                            <td>
+                                                <script type="text/javascript">
+                                                dont_want_spam=(':jose' + '.fragoso@' + 'tecnico.' + 'ulisboa' + ".pt");
+                                                subtle=dont_want_spam.substring(1);
+                                                document.write('<a href="mailto' + dont_want_spam + '">' + subtle + '</a>')
+                                                </script>
+                                            </td>
+                                        </tr>
+                                       <tr>
+                                            <td>Phone:</td>
+                                            <td>+1-203-432-8001</td>
+                                        </tr>
+                                    </tbody></table>
+
+                                    <br><br>
+                                    <p style="text-align:center; font-size:20px"><a href="files/cv.pdf" style="text-decoration:none; color:maroon">Curriculum Vitae</a></p>
+
+                                </div>
+                            </div>
+                        </div>
+                </div></div></div>
+            </div>
+
+        </div>
+        <div id="fixedPaneRight">
+
+            <div id="scrollingPane">
+
+                <!--
+                    Naming convention for Tabs: hashtag+Tab
+                    e.g., hashtag #research corresponds to tab with id="researchTab"
+                -->
+                <div id="tabs" class="tabContainer">
+                    <a href="#bio">
+                    <div id="bioTab" class="tab" onclick="activatePanel(this,'bio');">
+                        Bio
+                    </div></a>
+                    <a href="#publications">
+                    <div id="publicationsTab" class="tab" onclick="activatePanel(this,'publications');">
+                        Publications
+                    </div></a>
+                    <a href="#projects">
+                    <div id="researchTab" class="tab  activeTab" onclick="activatePanel(this,'projects');">
+                        Student Projects
+                    </div></a>
+                    <a href="#teaching">
+                    <div id="teachingTab" class="tab" onclick="activatePanel(this,'teaching');">
+                        Teaching
+                    </div></a>
+                </div>
+
+                <!--
+                    Naming convention for panels: hashtag
+                    e.g., hashtag #research corresponds to panel with id="research"
+                -->
+
+                <div id="bio" class="panel invisible invisible">
+                    <h2 class="title">Bio</h2>
+                    <div class="content">
+                        <!-- <h3>Short Bio</h3> -->
+                        <div class="headline addMargin">Short Bio</div>
+                        <p>
+                             
+                             Welcome to my home page. I am an Assistant Professor in the
+                             <a href="https://fenix.tecnico.ulisboa.pt/departamentos/dei/o-dei">Department of Computer Science and Engineering</a> at 
+                             <a href="https://tecnico.ulisboa.pt/pt/">Instituto Superior Técnico</a>, 
+                             and a member of <a href="https://inesc-id.pt">INESC-ID</a>, where
+                             I conduct my research as a member of the <a href="https://inesc-id.pt/group/II08/">SAT group</a>.
+                        </p>
+                        
+                        
+                        <p>
+                             My goal, both as a researcher and as an educator, is to contribute to the effort to 
+                             embed formal methods into the heart of the software development process, grounding it on 
+                             well-established mathematical principles and certified analyses and tools.
+                             
+                             So far, I have been mainly focused on Web programs written in JavaScript. 
+                             At Imperial, I led the development of JaVerT, the first separation-logic-based 
+                             tool for JavaScript analysis and testing. The JaVerT project has been highly successful 
+                             thus far, gathering interest from researchers in both industry and academia. 
+                             
+                             JaVerT was awarded a FB <a href="https://research.fb.com/announcing-the-winners-of-the-facebook-continuous-reasoning-research-awards/">research award</a> 
+                             and the JaVerT team is currently working with R&D engineers at Amazon, using 
+                             JaVerT to verify critical components of the JavaScript implementation of the 
+                             <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html">AWS 
+                             Encryption SDK</a>.
+                        </p>     
+                        
+                        <div class="headline addMargin">Previous Affiliations</div>
+                        <div class="education">
+                             <h3><a href="https://www.imperial.ac.uk/">Imperial College London</a>, UK</h3>
+                                 <p>PostDoc Researcher working on JavaScript Verification and Testing (2015 - 2019)<br>
+                                 </p>
+                        </div>
+                        <div class="education">
+                            <h3><a href="">INRIA - Sophia Antipolis</a>, France</h3>
+                            <p>PhD student working on JavaScript information flow security. 
+                            Thesis title: <em>Enforcing Secure Information Flow in JavaScript Web Applications</em><br>
+                            <em>Advisors: <a href="http://www-sop.inria.fr/lemme/Tamara.Rezk/">Tamara Rezk</a>
+                                and <a href="http://web.ist.utl.pt/~ist24690/Home_Page_Ana_Almeida_Matos/Home.html">Ana Almeida Matos</a></em>
+                            </p>
+                       </div>
+
+                    </div>
+                </div>
+
+
+
+                <div id="publications" class="panel invisible invisible">
+                    <h2 class="title">Publications 333</h2>
+                    <div class="content">
+                    <div class="headline addMargin">Conference / Journal Papers</div>
+                    <table class="result">
+                          <tbody>
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[POPL'19]</a></td>
+                              <td class="bibitem">J. Fragoso Santos, P. Maksimović, G. Sampaio, P. Gardner: 
+                                  <span class="bibtitle"><a href="papers/javert2.0.pdf">JaVerT 2.0: Compositional Symbolic Execution for JavaScript</a></span>,
+                              in <em>Symposium on Principles of Programming Languages (POPL 2019)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[PPDP'18]</a></td>
+                              <td class="bibitem">J. Fragoso Santos, P. Maksimović, T. Grohens, J. Dolby, P. Gardner: 
+                                  <span class="bibtitle"><a href="papers/cosette.pdf">Symbolic Execution for JavaScript</a></span>,
+                              in <em>Symposium on Principles and Practice of Declarative Programming (PPDP 2018)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[POPL'18]</a></td>
+                              <td class="bibitem">J. Fragoso Santos, P. Maksimović, D. Naudžiuniene, T. Wood, P. Gardner: 
+                                  <span class="bibtitle"><a href="papers/javert.pdf">JaVerT: JavaScript Verification Toolchain</a></span>,
+                              in <em>Symposium on Principles of Programming Languages (POPL 2018)</em>.</td>
+                            </tr>
+                            
+                             <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[CADE'17]</a></td>
+                              <td class="bibitem">José Fragoso Santos, Philippa Gardner, Petar Maksimovic, Daiva Naudžiuniene: 
+                                  <span class="bibtitle"><a href="papers/cade.pdf">Towards Logic-Based Verification of JavaScript Programs</a></span>,
+                              in <em>International Conference on Automated Deduction (CADE 2017)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[JCS'16]</a></td>
+                              <td class="bibitem">Zhengqin Luo, José Fragoso Santos, Ana Almeida-Matos, Tamara Rezk: 
+                                  <span class="bibtitle"><a href="papers/mashic.pdf">Mashic compiler: Mashup sandboxing based on inter-frame communication</a></span>,
+                              in <em>Journal of Computer Security</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[APLAS'16]</a></td>
+                              <td class="bibitem">Azalea Raad, José Fragoso Santos, Philippa Gardner: 
+                                  <span class="bibtitle"><a href="papers/dom.pdf">DOM: Specification and Client Reasoning</a></span>,
+                              in <em>Asian Symposium on Programming Languages and Systems (APLAS 2016)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[TGC'15(a)]</a></td>
+                              <td class="bibitem">José Fragoso Santos, Thomas Jensen, Alan Schmitt, Tamara Rezk: 
+                                  <span class="bibtitle"><a href="papers/hybrid-typing.pdf">Hybrid Typing of Secure Information Flow in a JavaScript-like Language</a></span>,
+                              in <em>Symposium on Trustworthy Global Computing (TGC 2015)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[TGC'15(b)]</a></td>
+                              <td class="bibitem">José Fragoso Santos, Ana Almeida Matos, and Tamara Rezk: 
+                                  <span class="bibtitle"><a href="papers/tgc-modular.pdf">Modular Monitor Extensions for Information Flow Security in JavaScript</a></span>,
+                              in <em>Symposium on Trustworthy Global Computing (TGC 2015)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[TGC'14]</a></td>
+                              <td class="bibitem">Ana Almeida Matos, José Fragoso Santos, Tamara Rezk: 
+                                  <span class="bibtitle"><a href="papers/coreDOM.pdf">An Information Flow Monitor for a Core of DOM - Introducing references and live primitives</a></span>,
+                              in <em>Symposium on Trustworthy Global Computing (TGC 2014)</em>.</td>
+                            </tr>
+                            
+                             <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[SEC'14]</a></td>
+                              <td class="bibitem">José Fragoso Santos, Tamara Rezk: 
+                                  <span class="bibtitle"><a href="papers/instrumentation.pdf">An Information Flow Monitor-Inlining Compiler for Securing a Core of JavaScript</a></span>,
+                              in <em>IFIP International Information Security and Privacy Conference (IFIP SEC 2014)</em>.</td>
+                            </tr>
+                            
+                            <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[PLAS'12]</a></td>
+                              <td class="bibitem">Ana Almeida Matos, José Fragoso Santos: 
+                                  <span class="bibtitle"><a href="papers/plas.pdf">Typing Illegal Information Flows as Program Effects</a></span>,
+                              in <em>Workshop on Programming Languages and Analysis for Security (PLAS 2012)</em>.</td>
+                            </tr>
+                            
+                             <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[PLAS'12]</a></td>
+                              <td class="bibitem">Ana Almeida Matos, José Fragoso Santos: 
+                                  <span class="bibtitle"><a href="papers/plas.pdf">Typing Illegal Information Flows as Program Effects</a></span>,
+                              in <em>Workshop on Programming Languages and Analysis for Security (PLAS 2012)</em>.</td>
+                            </tr>
+                            
+                             <tr class="bibline">
+                              <td class="bibref"><a href="https://popl19.sigplan.org" style="text-decoration:none; color:#000000">[IWIL'08]</a></td>
+                              <td class="bibitem">José Fragoso Santos, Vasco Manquinho:
+                                  <span class="bibtitle"><a href="papers/iwil.pdf">Learning Techniques for Pseudo-Boolean Solving</a></span>,
+                              in <em>International Workshop on the Implementation of Logics (IWIL 2008)</em>.</td>
+                            </tr>
+ 
+                          </table>
+                       
+
+
+                                <div class="headline addMargin">Theses</div>
+                                <table class="result">
+                                      <tbody>
+                                        <tr class="bibline">
+                                          <td class="bibref">[PhD'14]</td>
+                                          <td class="bibitem">José Fragoso Santos: <span class="bibtitle"><a href="papers/phdthesis.pdf">Enforcing Secure Information Flow in Client-side Web Applications</a></span>,
+                                          PhD thesis, University of Nice Sophia Antipolis, 2014 <span class="emphasis"></span>.</td>
+                                        </tr>
+                                        
+                                          <tr class="bibline">
+                                            <td class="bibref">[MSc'08]</td>
+                                            <td class="bibitem">José Fragoso Santos: <span class="bibtitle"><a href="papers/thesismaster.pdf">Learning Techniques for Pseudo-Boolean Solving and Optimization</a></span>,
+                                            Master's thesis, Instituto Superior Técnico, Universidade de Lisboa, 2008.</td>
+                                          </tr>
+                                      </table>
+
+                      </div>
+                      
+
+
+                </div>
+
+        <div id="projects" class="panel invisible invisible">
+                    <h2 class="title">Student Projects</h2>
+                    
+                    <div class="content">
+                            <div class="headline addMargin">Available Projects</div>
+                            <p><em>Bounded Model Checking for TypeScript Code</em></p>
+                            <p><em>Compositional Symbolic Execution for Python using Gillian</em></p>
+                            
+                            <p><em>Integrated Debugging of JavaScript Regular Expressions in the Browser</em></p>
+                            
+                            <p><em>The Automated Reasoning that Real Men Do: an empirical study of SMT clients in the wild</em></p>
+                            
+                            <div class="headline addMargin">Current Students</div>
+                            
+                            <h3>Gabriela Cunha Sampaio</h3>
+                            <p>
+                            <em>PhD Computer Science, Imperial College London</em> <br />
+                            Joint supervision with P. Gardner.
+                            </p>
+                            
+                            <h3>André Ribeiro</h3>
+                            <p>
+                            <em>Project: Information Flow Analysis for JavaScript via Compilation</em><br/>
+                            <em>MSc. Telecommunications and Informatics Engineering, IST</em> <br />
+                            Joint supervision with A. Almeida Matos.
+                            </p>
+                            
+                            <div class="headline addMargin">Past Students</div>
+                            <h3>Eric Wenhao Ruan Zhu</h3>
+                            <p>
+                            <em>Project: Multi-theory First Order Solver for Program Analysis and Verification</em> <br/>
+                            <em>MEng Joint Mathematics and Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                            <h3>Priyanka Shah</h3>
+                            <p>
+                            <em>Project: Compiling JavaScript Regular Expressions</em> <br/>
+                            <em>MEng Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                            
+                            <h3>Si Wei Tan</h3>
+                            <p>
+                            <em>Project: Trusted Infrastructure for JavaScript (ES5) Analysis</em> <br/>
+                            <em>MEng Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                            
+                            <h3>Radu-Andrei Szasz (IBM Project Prize)</h3>
+                            <p>
+                            <em>Project: Typing JavaScript Through Symbolic Execution</em> <br/>
+                            <em>MEng Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                            <h3>Beatrix de Wilde</h3>
+                            <p>
+                            <em>Project: Towards Automatic Verification of JavaScript Programs</em> <br/>
+                            <em>MEng Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                            
+                            <h3>Iván Matellanes</h3>
+                            <p>
+                            <em>Project: A Verification Tool for JavaScript.</em> <br/>
+                            <em>MSc Computing, Imperial College London</em> <br />
+                            Joint supervision with Philippa Gardner and P. Maksimovic.
+                            </p>
+                 </div>
+        </div>
+      
+
+              <div id="teaching" class="panel invisible invisible">
+                    <h2 class="title">Teaching</h2>
+
+                    <div class="content">
+                        <div class="headline addMargin">Current Teaching</div>
+                        <h3><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65179577/2019-2020/1-semestre">Object Oriented Programming</a></h3>
+                    </div>
+                </div> 
+
+
+
+
+
+
+</body></html>

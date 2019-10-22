@@ -1,0 +1,426 @@
+html {
+	height: 100%;
+}
+
+body {
+    background-color:#acb2bd;
+    color: #A0A2A5;
+    font: 11px Verdana, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 22pt;
+    color: 	#EE82EE; /* #788D9F; */
+    display: inline;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+p {
+    margin-left:20px;
+    margin-right:20px;
+}
+
+#content{
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    /*max-width:1000px;*/ /*this one gives different behavior for narrow windows*/
+    width:80%;
+}
+
+.mobile #content{
+    width:100%;
+}
+
+#fixedPaneLeft{
+    position:fixed;
+    width:275px;
+    height:95%;
+    z-index:1;
+}
+
+#fixedPaneRight{
+    position:fixed;
+    width:inherit;
+    height:95%;
+/*    z-index:-3;*/
+}
+
+#scrollingPane{
+    position:absolute;
+    top:0px;
+    width:70%;
+
+    right:15px;
+    height:100%;
+    z-index:1;
+}
+
+.ie #scrollingPane{
+    position:relative;
+    left: 300px;
+}
+
+.safari #scrollingPane{
+    position:relative;
+    left: 300px;
+}
+
+.opera #scrollingPane{
+    position:relative;
+    left: 300px;
+}
+
+.mobile #scrollingPane{
+    width:70%;
+}
+
+.panel{
+    color: #788d9f; 
+    background-color:#fff;
+    width:auto;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    box-shadow: 4px 4px 3px #6A6E75;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-top: 30px;
+    height:90%;
+    height:-webkit-calc(100% - 70px);
+    height:-moz-calc(100% - 70px);
+    z-index:1;
+}
+
+
+
+#photo{
+    margin-left: auto;
+    margin-right: auto;
+    color:#788d9f;
+    border:2px solid;
+}
+
+#hideScroll{
+    width:100%;
+    height:99%;
+    overflow:hidden;
+}
+
+#scrollWrapper{
+    width:110%;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+#infoWrapper{
+    width:96%;
+}
+
+#infoBlock{
+    padding-left:10px;
+    padding-right:10px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+    height:97%;
+}
+
+#infoBlock p {
+    font-size: 8pt;
+    margin:0;
+    padding:0;
+    line-height: 15px;
+}
+
+#infoBlock .details{
+    padding-top:10px;
+    display:inline-block;
+    text-align:left;
+    height:auto;
+}
+
+#infoBlock .details h3 {
+    font-size:11pt;
+    color:#A0A2A5;
+    display:inline;
+    font-weight:normal;
+    line-height:20px;
+    margin-right:15px;
+}
+
+.headline{
+    display:block;
+    color:#FFF;
+    font-size:11pt;
+    background-color:#A26B6B;
+    line-height:2em;
+    text-indent:15px;
+    margin-top:5px;
+}
+
+.addMargin{
+    margin-left:15px;
+}
+
+.details ul{
+    list-style-type:circle;
+    padding-left:20px;
+}
+
+.details li {
+    margin: 0 0 1em 0;
+}
+
+#position{
+    padding-top:10px;
+    padding-bottom:5px;
+}
+
+#address{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+
+.panel .title{
+    display:none;
+}
+
+.tabContainer{
+    width:auto;
+    position:absolute;
+    height:25px;
+    padding-left:10px;
+    z-index:-1; /*it needs to be below the tabs, otherwise they become unclickable*/
+}
+
+.safari .tabContainer{
+    top:-30px;
+}
+
+.opera .tabContainer{
+    top:-30px;
+}
+
+.ie .tabContainer{
+    top:-30px;
+}
+
+.tab{
+    color:#acb2bd;
+    background-color:#eee;
+    display:inline-block;
+    line-height:25px;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 7px;
+    padding-top: 2px;
+    text-transform:uppercase;
+    font-weight:bold;
+    position:relative;
+/*    z-index:0;*/
+/*    border:1px solid;*/
+    cursor:pointer;
+}
+
+.tabContainer a{
+    Text-decoration:none;
+}
+
+.activeTab{
+    color:#788D9F;
+    background-color:#FFF;
+    box-shadow: 4px 4px 3px #6A6E75;
+    position:relative;
+/*    z-index:0;*/
+    border:none;
+    top:-2px;
+}
+
+
+.content{
+    padding-right:30px;
+    color:black;
+    height:99%;
+    overflow:auto;  
+    line-height:18px;
+}
+
+
+.content h3{
+    margin-left:20px;
+}
+
+
+
+.content .education h3{
+    font-variant:small-caps;
+    margin-bottom:-7px;
+}
+
+.invisible{
+    display:none;
+}
+
+table.projects{
+    margin-left: 2em;
+    padding-left: 0;
+    border-spacing: 0;
+    border-width:0;
+    font-size: 1em;
+    border-spacing: 0;  /* 'cellspacing' equivalent */ 
+}
+
+table.projects td, 
+table.projects th{
+    padding: 0; /* 'cellpadding' equivalent */ 
+}
+
+.projectleft {
+    width: 5px;
+    vertical-align:top;
+}
+
+.projectmiddle {
+    width: 20px;
+    vertical-align:top;
+}
+
+.projectdetails {
+    max-width:650px;
+    padding-left: 0em;
+/*    margin-right:2em;*/
+    vertical-align:middle;
+    text-align:justify;
+}
+
+.projecticon { 
+    width: 120px;
+    vertical-align:middle;
+}
+
+/*
+   Sub-header style
+*/
+
+.subheader{
+    margin-left:15px;
+    font-size:11pt;
+	font-weight:bold;
+	color:#6b4141;
+    line-height:1em;
+    text-indent:5px;
+}
+
+
+
+/*
+    Publications style
+*/
+
+.header{
+    margin-left:15px;
+    color:#FFF;
+    font-size:15pt;
+	font-weight:bold;
+/*    background-color:#A26B6B;*/
+	color:#6b4141;
+    line-height:2em;
+    text-indent:15px;
+    margin-top:5px;
+}
+
+.date{
+    margin-left:-15px;
+}
+
+.result {
+    margin-left:15px;
+    margin-top:3px;
+}
+
+.bibref{
+    padding:15px;
+    width: 65px;
+}
+
+.result td{
+    vertical-align: top;
+    padding-top: 0px;
+}
+
+
+
+.bibitem{
+    padding-bottom: 10px;
+}
+
+.bibitem a{
+    color:black;
+    text-decoration:underline;
+}
+
+.bibitem .emphasis{
+    color:red;
+}
+
+#pubSort{
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    width:100%;
+    margin-top:-10px;
+}
+
+.expandableBox{
+    margin-left:15px;
+    color:#A26B6B;
+    border:1px solid;
+    position:relative;
+}
+
+.expandableBox .title{
+    width:75%;
+    display:inline-block;
+    margin-left:-15px
+}
+
+.expandableBox .showButton{
+    cursor:pointer;
+    font-size:11px;
+    position:relative;
+    text-align:right;
+    display:inline-block;
+    margin-top:0px;
+    width:23%
+}
+
+.expandableBox .expandableContent{
+    color:black;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden;
+}
+
+.boxed{
+    margin-left:15px;
+    border:1px solid #A26B6B;
+}
