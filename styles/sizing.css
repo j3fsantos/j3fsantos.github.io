@@ -427,20 +427,24 @@ table.projects th{
 
 a:link {
     color: #9d6262;
+    font-weight:bold;
     text-decoration: none;
 }
 
 a:visited {
     color: #9d6262;
+    font-weight:bold;
     text-decoration: none;
 }
 
 a:hover {
     color: blue;
+    font-weight:bold;
     text-decoration: underline;
 }
 
 a:active {
     color: blue;
+    font-weight:bold;
     text-decoration: underline;
 }
