@@ -1,0 +1,40 @@
+<html> 
+
+<body> 
+<h2>Understanding the Evolution of the Web </h2>
+
+<p>
+Web applications play a prominent role in the Internet of today. They run on multiple platforms and devices and are increasingly used by people in their everyday lives to accomplish all sorts of tasks, including e-mailing, word processing, online banking, among many others. 
+</p>
+
+<p> 
+In order to make web applications behave consistently across all platforms, the World Wide Web Consortium [1], W3C, has long been establishing web standards that precisely describe how web applications are to be loaded, executed, and displayed. Such standards are accompanied by official test suites, which browser implementations use to check their conformance with respect to each standard. 
+</p>
+
+<p> 
+One of the most popular web standards is the Document Object Model, DOM [2]. First published in 1998, the DOM was designed to cater for the programmatic manipulation of HTML and XML documents. Since then, the standard has been steadfastly growing. Starting with DOM Core Level 1, which only describes the various DOM node types and the methods they expose, the DOM has grown to include separate specifications of several additional HTML features, such as Cascading Style Sheets (CSS) and UI Events. 
+</p>
+
+<p> 
+In contrast to JavaScript, whose standard is fully adopted by most browser vendors, the degree of adoption of the various W3C standards is highly variable, with many browsers explicitly opting not to provide support for novel standard features. For instance, Internet Explorer does not support the Shadow DOM [5], an extension of the DOM API that allows for CSS scoping and DOM encapsulation.
+</p>
+
+<p> 
+The **goal** of this thesis is to study the adoption of novel DOM features by web applications in the wild. More specifically, the project will consist of an empirical study [6, 7, 8] performed on applications that make use of the various DOM APIs defined in the DOM Living Standard. It will comprise the following three main tasks. First, the student will develop an infrastructure to mine applications from software repositories in GitHub, identifying those that make use web standards. Then, the student will implement a simple static analysis tool to automatically label each web application with respect to the DOM features that it uses. Finally, the student will classify the collected data according to the standard’s versions and potentially identify non-popular features. 
+</p>
+
+
+<h3>References</h3>
+<p>
+[1] W3C https://www.w3.org <br /> 
+[2] DOM Specification. https://dom.spec.whatwg.org. <br />
+[3] https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/ <br />
+[4] Choudhary, Shauvik Roy, Mukul R. Prasad, and Alessandro Orso. "Crosscheck: Combining crawling and differencing to better detect cross-browser incompatibilities in web applications." 2012 IEEE Fifth International Conference on Software Testing, Verification and Validation. IEEE, 2012. <br />
+[5] Shadow DOM. https://www.w3.org/TR/shadow-dom. <br />
+[6] Kitchenham, Barbara A., et al. "Preliminary guidelines for empirical research in software engineering." IEEE Transactions on software engineering 28.8 (2002): 721-734. <br />
+[7] Shull, Forrest, Janice Singer, and Dag IK Sjøberg, eds. Guide to advanced empirical software engineering. Springer Science & Business Media, 2007. <br />
+[8] Easterbrook, Steve, et al. "Selecting empirical methods for software engineering research." Guide to advanced empirical software engineering. Springer, London, 2008. 285-311.
+</p>
+
+</body>
+</html> 

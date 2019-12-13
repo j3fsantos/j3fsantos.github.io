@@ -1,0 +1,43 @@
+<html> 
+
+<body> 
+<h2>A Reference Implementation of Web Workers</h2>
+
+<p>
+JavaScript is the most widespread dynamic language. It is the de facto language for client-side web applications, used by more than 95% of websites [1]. Its behaviour, described in the ECMAScript English standard [2], is highly complex and full of corner cases. Furthermore, client-side JavaScript programs have access to an ever-growing number of browser APIs, making them extremely hard to analyse and debug.   
+</p>
+
+<p>
+The Web Workers API [3] is a W3C API that allows client-side JavaScript programs to spawn background “workers”, which can be thought of as cooperative threads [4,5] that run in parallel with the program's main page. Web Workers abide the non-preemptive multi-threading discipline as each worker runs to completion or until it voluntarily yields control. 
+</p>
+
+<p>
+At Imperial College London, the Verified Trustworthy Software Specification group developed JaVerT [11,12], a JavaScript compositional symbolic execution tool with support for verification [6], symbolic execution [7,13], and bi-abduction [8]. JaVerT has gathered interest from researchers both in academia and in industry. It has been the topic of several publications in top-level Programming Language (PL) venues, won a Facebook research award [9], and is currently being used to verify the Amazon AWS Encryption SDK [10]. 
+</p>
+
+<p>
+Recently, JaVerT has been extended with a core events module that was used to implement DOM UI events and JavaScript promises. 
+The **goal** of this project is to continue this line of work, using JaVerT's core events module to implement the Web Workers API. The project will consist of the following three main tasks. Firstly, the student will extend JaVerT's core events module to allow for message passing communication between workers. Then, the student will implement the Web Workers API directly in JavaScript, using JaVerT's event primitives to interact with the core events module. Finally, the student will use the new version of JaVerT to symbolically analyse real world JavaScript projects that make use of Web Workers. 
+</p>
+
+
+
+<h3>References</h3>
+<p>
+[1] w3techs.com/technologies/details/cp-javascript <br /> 
+[2] ECMAScript Committee. The 10th Edition of the ECMAScript Language Specification. ECMA. 2019 <br /> 
+[3] W3C Working Group. Web Workers. 2015. <br /> 
+[4] M. Abadi et al. A Model of Cooperative Threads. POPL'09. <br /> 
+[5] G. Boudol. Fair Cooperative Multithreading. ICCT'07. <br /> 
+[6] J. Reynolds. Separation Logic: A Logic for Shared Mutable Data Structures. LICS'02.  <br /> 
+[7] P. Godefroid et al. DART: Directed Automated Random Testing. PLDI'05. <br /> 
+[8] C. Calcagno et al. Compositional Shape Analysis by Means of Bi-abduction.  J. ACM. 2011.  <br /> 
+[9] https://research.fb.com/announcing-the-winners-of-the-facebook-continuous-reasoning-research-awards/ <br /> 
+[10] https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html <br /> 
+[11] J. Fragoso Santos et al. JaVerT: JavaScript Verification Toolchain. POPL'18. <br /> 
+[12] J. Fragoso Santos et al. JaVerT 2.0: Compositional Symbolic Execution for JavaScript. POPL'19.  <br /> 
+[13] E. Torlak. A Lightweight Symbolic Virtual Machine for Solver Aided Host Languages. PLDI'14. 
+</p>
+
+</body>
+</html> 

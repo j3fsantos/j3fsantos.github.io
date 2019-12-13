@@ -1,0 +1,41 @@
+<html> 
+
+<body> 
+<h2>Scalable Symbolic Execution for Preact Web Applications</h2>
+
+<p> 
+JavaScript is the most widespread dynamic language. It is the de facto language for client-side web applications, used by more than 95% of websites [1]. Its behaviour, described in the ECMAScript English standard [2], is highly complex and full of corner cases. Furthermore, client-side JavaScript programs have access to an ever-growing number of browser APIs, making them extremely hard to analyse and debug.   
+</p>
+
+<p>
+Preact [3] is a modern, compact and light version of React [4], a library created by Facebook for developing user interfaces. Despite its small size, Preact is extremely popular and widely used by large companies, such as Uber, Groupon, Domino’s and Pepsi. The library is a client of the DOM [5], an API designed by W3C to allow the manipulation of HTML and XML documents via JavaScript code. 
+</p>
+
+<p>
+At Imperial College London, the Verified Trustworthy Software Specification group developed JaVerT [6,7], a JavaScript compositional symbolic execution tool with support for verification [8], symbolic execution [9,13], and bi-abduction [10]. JaVerT has gathered interest from researchers both in academia and in industry. It has been the topic of several publications in top-level Programming Language (PL) venues, won a Facebook research award [11], and is currently being used to verify the Amazon AWS Encryption SDK [10].
+</p>
+
+<p>
+Recently, JaVerT has been extended with a core events module that was used to implement DOM UI events and JavaScript promises. The **goal** of this project is to continue this line of work, applying the approach to symbolically analyse React and its open-source clients. The project will consist of the following three main tasks. Firstly, the student will extend the DOM reference implementation in JavaScript to cover Preact’s constructs. Then, the student will perform a study by mining relevant open-source projects on GitHub using Preact. Finally, the student will design symbolic tests for the respective projects, with the goal of identifying bugs and antipatterns in web development.
+</p>
+
+<h3>References</h3>
+<p>
+[1] w3techs.com/technologies/details/cp-javascript <br /> 
+[2] ECMAScript Committee. The 10th Edition of the ECMAScript Language Specification. ECMA. 2019 <br /> 
+[3] Preact library. https://preactjs.com. <br /> 
+[4] ReactJS. https://reactjs.org. <br /> 
+[5] DOM API Specification. https://dom.spec.whatwg.org. <br /> 
+[6] J. Fragoso Santos et al. JaVerT: JavaScript Verification Toolchain. POPL'18. <br /> 
+[7] J. Fragoso Santos et al. JaVerT 2.0: Compositional Symbolic Execution for JavaScript. POPL'19.  <br />  
+[8] J. Reynolds. Separation Logic: A Logic for Shared Mutable Data Structures. LICS'02. <br />  
+[9] P. Godefroid et al. DART: Directed Automated Random Testing. PLDI'05. <br /> 
+[10] C. Calcagno et al. Compositional Shape Analysis by Means of Bi-abduction. J. ACM. 2011.<br />   
+[11]https://research.fb.com/announcing-the-winners-of-the-facebook-continuous-reasoning-research-awards/ <br /> 
+[12] https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html <br /> 
+[13] E. Torlak. A Lightweight Symbolic Virtual Machine for Solver Aided Host Languages. PLDI'14. 
+
+</p>
+
+</body>
+</html> 

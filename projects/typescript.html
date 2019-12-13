@@ -1,0 +1,35 @@
+<html> 
+
+<body> 
+<h2>Compositional Symbolic Execution for Typescript</h2>
+
+<p> 
+JavaScript is the de-facto language for programming client-side Web applications. It is supported by all major browsers. However, the dynamic nature of JavaScript together with its complex semantics makes understanding its code notoriously difficult, leading to a lack of adequate static analysis tools and buggy programs.
+</p> 
+
+<p> 
+Being a dynamic language, JavaScript does not come with some of the main advantages of statically typed languages, such as informative compiling errors and automatic code completion. Hence, during the last decade, there has been a lot of research on type systems for verifying safety properties of different fragments of JavaScript. Most notably, the TypeScript programming language [1], developed at Microsoft, adds optional types to JavaScript programs and comes equipped with a type system for checking memory and type safety.
+</p>
+
+<p> 
+The TypeScript type system is known to be unsound [2,3]. Well-typed TypeScript programs can go wrong in multiple ways, for instance due to null-pointer exceptions and array-out-of-bounds errors. The **goal** of this project is to develop a symbolic execution engine [4] for TypeScript capable of discovering such type of errors. 
+</p>
+
+<p> 
+The new symbolic execution engine is to be developed on top of JaVerT [5, 6], a state-of-the-art symbolic execution tool for JavaScript. More concretely, the student will instrument the TypeScript transpiler to additionally generate a symbolic test suite [7] for the given program and then use JaVerT to run that test suite. The student will also be expected to evaluate the new analysis tool by applying it to real-world TypeScript projects obtained from GitHub. 
+</p>
+
+
+<h3>References</h3>
+<p>
+[1] Microsoft Corporation. TypeScript Language Specification (v1.8). 2016. <br /> 
+[2] A. Rastogi et al. Safe and Efficient Gradual Typing for TypeScript. POPL'15. <br /> 
+[3] G. Biermann et al. Understanding TypeScript. ECOOP'14. <br /> 
+[4] E. Torlak. A Lightweight Symbolic Virtual Machine for Solver Aided Host Languages. PLDI'14. <br /> 
+[5] J. Fragoso Santos et al. JaVerT: JavaScript Verification Toolchain. POPL'18. <br /> 
+[6] J. Fragoso Santos et al. JaVerT 2.0: Compositional Symbolic Execution for JavaScript. POPL'19.  <br /> 
+[7] J. Fragoso Santos et al. Symbolic Execution for JavaScript. PPDP'18. 
+</p>
+
+</body>
+</html> 

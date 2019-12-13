@@ -1,0 +1,51 @@
+<html> 
+
+<body> 
+<h2>A Semi-Automatic Separation-Logic Solver</h2>
+
+<p>
+Recent years have witnessed a series of success stories on the application of program analysis and verification techniques to statically-typed programming languages inside world-leading software companies. The most notable example is Infer [1], a separation-logic-based tool developed inside Facebook that is aimed at lightweight bug-finding of C, C++, Java/Android, and Objective C programs. 
+For program analyses to attain proper industrial acknowledgment and uptake, they need to be scalable. Program analyses achieve scalability by being compositional: that is, “the analysis result for a composite program is defined in terms of the analysis results for its parts and a means of combining them” [2]. In fact, compositionality was key for the success of Infer, which analyses millions of lines of code per day as part of Facebook’s code review pipeline. 
+Separation logic [3, 4] is a form of program analysis that enables compositional program reasoning. It is at the core of Infer, where it is used for lightweight bug-finding, but it also underpins many academic tools for proving functional correctness properties of programs written in languages as different as C [5, 6], Java [6,7], OCaml [8], and JavaScript [9,10].
+Modern separation logic engines use separation logic formulas to represent the state of their input programs and sophisticated pattern matching techniques to solve entailments between these formulas. These techniques are often described in the literature in a non-deterministic fashion, meaning that they cannot be directly used to guide efficient implementations. 
+</p>
+
+<p>
+At Imperial College London, the Verified Trustworthy Software Specification group developed JaVerT [9,10], the first separation-logic-based tool for JavaScript verification. JaVerT has been the topic of several publications in top-level Programming Language (PL) venues, won a Facebook research award [11], and is currently being used to verify the Amazon AWS Encryption SDK [12]. 
+</p>
+
+<p>
+JaVerT uses a custom-made separation logic solver based on pattern matching as part of its core symbolic execution engine. The **goal** of this project is to re-design the existing solver using recent ideas on sub-goal ordering [13,14] coming from logic programming research, where pattern matching is routinely used in the context of unification [15]. We expect the new solver to exhibit better performance than the existing one, and, more importantly, to be based on a clear well-defined algorithm that others can follow. 
+</p>
+
+<p>
+This project combines theory and practice. The limitations of the proposed algorithm are to be precisely understood and formally characterised and the resulting implementation must be thoroughly evaluated using appropriate test suites (example: the separation logic benchmarks from the 2018 competition [16]). 
+</p>
+
+<p>
+This project may result in a collaboration with the VetSpec group at Imperial. Good projects may lead to a publication in a verification/PL venue.
+</p>
+
+
+<h3>References</h3>
+<p>
+[1] C. Calcagno et al. Infer: Automatic Program Verifier for Memory Safety of C Programs. NASA FM'19. <br /> 
+[2] P. O’Hearn. Continuous Reasoning: Scaling the Impact of Formal Methods. LICS'18. <br />
+[3] J. Reynolds. Separation Logic: a Logic for Shared Mutable Data Structures. LICS'02. <br />
+[4] S. Ishtiaq et al. BI as an Assertion Language for Mutable Data Structures. POPL'01. <br />
+[5] M. Botincan et al. Separation Logic Verification of C Programs with an SMT Solver. ENCS'09. <br /> 
+[6] B. Jacobs et al. Verifast: A Powerful, Sound, Predictable, Fast Verifier for C and Java. NASA FM'11. <br /> 
+[7] D. Distefano. jStar: Towards Practical Verification for Java. OOPSLA'08. <br />
+[8] R. Krebbers et al. Interactive Proofs in Higher Order Concurrent Separation Logic. POPL'17. <br />
+[9] J. Fragoso Santos et al. JaVerT: JavaScript Verification Toolchain. POPL'18. <br />
+[10] J. Fragoso Santos et al. JaVerT 2.0: Compositional Symbolic Execution for JavaScript. POPL'19.  <br />
+[11] https://research.fb.com/announcing-the-winners-of-the-facebook-continuous-reasoning-research-awards/ <br />
+[12] https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html <br />
+[13] Mistral Contrastin et al. Automatic Reordering for Dataflow Safety for Datalog. PPDP'18. <br />
+[14] E. Rohwedder et al. Mode and Termination Checking for Higher-Order Logic Programs. ESOP'96. <br />
+[15] J. Robinson. A Machine-Oriented Logic Based on the Resolution Principle. Journal of the ACM. 
+[16] https://github.com/mihasighi/smtcomp14-sl/
+</p>
+
+</body>
+</html> 

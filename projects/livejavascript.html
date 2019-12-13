@@ -1,0 +1,67 @@
+<html> 
+
+<body> 
+<h2>A Live JavaScript Specification</h2>
+<p>
+JavaScript is the de facto programming language of the Web. Not only is it widely 
+used for client-side programming [1], but it is also used for programming server-side 
+applications via Node.js and it even runs on small embedded devices. 
+</p>
+
+<p>
+To guarantee that JavaScript programs behave consistently across all platforms, the 
+major browser vendors very early agreed to standardise the language, creating the 
+ECMAScript standard [2]. The ECMAScript standard, currently in its 10th edition, 
+is a long, complex document, written in English, which describes the syntax and 
+semantics of JavaScript. It is written as if it were the pseudo-code of a JavaScript 
+interpreter in that it describes each statement of the language operationally, 
+detailing each step of the evaluation. 
+</p>
+
+<p> 
+All the major JavaScript stakeholders (browser vendors, web security companies, 
+governmental agencies, international research groups, etc) accept the ECMAScript standard
+ to be the canonical version of the language and try to conform to it as closely as 
+ possible in their own implementations and models. This makes the ECMAScript standard 
+ one of the cornerstones of the internet of today. Despite its importance, the ECMAScript 
+ standard is in constant change. In fact, the ECMA Committee holds various meetings during 
+ the year to discuss modifications and additions to the standard in response to requests 
+ from the JavaScript community. These modifications and additions must then be propagated 
+ to the implementations of the language, which is often highly non-trivial as these 
+ implementations rely on various optimisation strategies in order to be as performant 
+ as possible [3,4]. 
+</p> 
+
+<p>
+The <em>goal</em> of this project is to design and implement a mechanism to 
+semi-automatically generate an executable version of the standard, the Live 
+JavaScript Specification, from its official textual description. The Live JavaScript 
+Specification will be primarily used as an oracle to test other implementations of the 
+language, thereby contributing to the effort of making JavaScript run uniformly and 
+correctly across all platforms. Further applications can also be envisaged; for instance, 
+one could use the Live JavaScript Specification as a stepping stone for automatically 
+synthesising a correct-by-construction JavaScript compiler [5] or an official language 
+test-suite. 
+</p> 
+
+<p>
+This project will consist of three main tasks. First, the student will design and 
+implement ECMA-SL, a domain-specific language [6] for specifying and running the
+ ECMAScript standard. Then, the student will apply rule-based natural language processing 
+ techniques to (semi)-automatically obtain a JavaScript interpreter written in ECMA-SL 
+ from the textual description of the standard. Lastly, the student will test the obtained 
+ interpreter against Test262, the official JavaScript test suite. 
+</p>
+
+<h3>References</h3>
+<p>
+[1] w3techs.com/technologies/details/cp-javascript<br /> 
+[2] ECMAScript Committee. The 10th Edition of the ECMAScript Language Specification. ECMA. 2019. <br />   
+[3] M. Serrano. JavaScript Ahead of Time Compilation. DLS'19. <br /> 
+[4] T. Rompf et al. Surgical Precision JIT Compilers. PLDI'14. <br /> 
+[5] N. Jones et al. Partial Evaluation and Automatic Program Generation. Prentice Hall. 1999. <br /> 
+[6] M. Mernik et al. When and How to Develop Domain Specific Languages. ACM Computing Surveys. 2005. 
+</p>
+
+</body>
+</html> 

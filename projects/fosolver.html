@@ -1,0 +1,33 @@
+<html> 
+
+<body> 
+<h2>A First-Order Solver for Program Analysis</h2>
+
+<p>
+Program analysis and verification tools often rely on state of the art SMT solvers to discharge their core logic first order queries. The design and implementation of such solvers is an active field of research, delivering more mature and performant solvers every year [1]. Nevertheless, current solvers only support a limited number of theories, such as the theories of real arithmetic, strings, and bit-vectors. Other theories, such as the theories of sets, lists, multi-sets, and discrete maps, are still scarcely supported and mainly found in specialised solvers designed for the targeted theory. 
+</p>
+
+<p>
+At Imperial College London, the Verified Trustworthy Software Specification group developed JaVerT [2,3], the first separation-logic-based tool for JavaScript verification. JaVerT has been the topic of several publications in top-level Programming Language (PL) venues, won a Facebook research award [4], and is currently being used to verify the Amazon AWS Encryption SDK [5]. 
+<p>
+
+<p>
+JaVerT has at its core a first order solver with support for the theory of real arithmetic and very limited ad-hoc support for the theories of lists and sets. This solver works by encoding the first order fragment of JaVerT logic into Z3 [6], a world-leading SMT solver developed at Microsoft Research. The **goal** of this thesis is to extend the first order solver of JaVerT with principled support for decidable fragments of the theories of sets and lists (already partially supported) and, for the first time, floating point arithmetic, strings, multi-sets, and discrete maps. 
+<p>
+
+<p>
+This project combines theory and practice. The limitations of the proposed solver are to be precisely understood and formally characterised and the resulting implementation must be thoroughly evaluated using appropriate test suites.
+<p>
+
+<h3>References</h3>
+<p>
+[1] D. Monniaux. A Survey on Satisfiability Modulo Theory. CASC'16. <br /> 
+[2] J. Fragoso Santos et al. JaVerT: JavaScript Verification Toolchain. POPL'18. <br /> 
+[3] J. Fragoso Santos et al. JaVerT 2.0: Compositional Symbolic Execution for JavaScript. POPL'19. <br />  
+[4] https://research.fb.com/announcing-the-winners-of-the-facebook-continuous-reasoning-research-awards/ <br /> 
+[5] https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html <br /> 
+[6] L. De Moura et al. Z3: An Efficient SMT Solver. TACAS'08. 
+</p>
+
+</body>
+</html> 

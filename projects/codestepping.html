@@ -1,0 +1,36 @@
+<html> 
+
+<body> 
+<h2>Code-Stepping Regular Expressions in the Browser</h2>
+
+<p> 
+JavaScript is the most widespread dynamic language [1]. It is the de facto language for client-side web applications; it is used for server-side scripting with Node.js and it even runs on small embedded devices. JavaScript regular expressions are an essential part of the language. They are often used for parsing user input and messages coming from the network and they play a key role in securing Web applications. In fact, JS developers commonly rely on regular expressions to write complex string sanitisers to prevent a variety of security attacks, such as cross site scripting (XSS) and cross site request forgery [2]. 
+</p>
+
+<p> 
+The behaviour of JS regular expressions is specified in the ECMAScript Standard (version 10) [3]. The ECMAScript standard is a long, complex document, written in English, about 900 pages long. Furthermore, it keeps growing every year in response to the ever-growing demand of the JavaScript community. Hence, understanding the exact behaviour of JavaScript regular expressions is becoming harder to achieve, whilst new business and cyber-security challenges make it of escalating importance. 
+</p>
+
+<p> 
+If understanding the behaviour of JavaScript regular expressions is hard, programming them is even harder. It is an extremely error prone task, which often leads programmers to resort to trial-and-error approaches. Furthermore, the debugging facilities provided by all browsers and IDEs for JavaScript programming are lacking when it comes to regular expressions. In fact, browsers do not allow the programmer to code step regular expressions matches. The process of matching a string against a given regular expression is presented to the programmer as a single atomic operation, shedding no light as to why an expected match did not occur or an unexpected match did occur. 
+</p>
+
+<p> 
+The goal of this thesis is to implement a Chrome plug-in [4] to allow JavaScript programmers to code-step regular expression matches. The student will work with a reference interpreter of JavaScript regular expressions developed by the Verified Trustworthy Software Specification (VetSpec) group at Imperial College London. 
+</p>
+
+<p>
+This project may result in a collaboration with the VetSpec group at Imperial. 
+</p>
+
+
+<h3>References</h3>
+<p>
+[1] w3techs.com/technologies/details/cp-javascript <br /> 
+[2] J. Weinberger et al. A Systematic Analysis of XSS Sanitisation in Web Application Frameworks. ESORICS'11. <br /> 
+[3] ECMAScript Committee. The 10th Edition of the ECMAScript Language Specification. ECMA. 2019 <br /> 
+[4] Browser Extensions - Developer Guide. Google Chrome. Online documentation.  
+</p>
+
+</body>
+</html> 

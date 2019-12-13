@@ -1,0 +1,34 @@
+<html> 
+
+<body> 
+<h2>A Formal Semantics of JavaScript Regular Expressions</h2>
+
+<p>
+JavaScript is the most widespread dynamic language [1]. It is the de facto language for client-side web applications; it is used for server-side scripting with Node.js and it even runs on small embedded devices. JavaScript regular expressions are an essential part of the language. They are often used for parsing user input and messages coming from the network and they play a key role in securing Web applications. In fact, JS developers commonly rely on regular expressions to write complex string sanitisers to prevent a variety of security attacks, such as cross site scripting (XSS) and cross site request forgery [2]. 
+</p>
+
+<p>
+The behaviour of JS regular expressions is specified in the ECMAScript Standard (version 10) [3]. The JS standard is a long, complex document, written in English, about 900 pages long. Furthermore, it keeps growing every year in response to the ever-growing demand of the JavaScript community. Hence, understanding the exact behaviour of JavaScript regular expressions is becoming harder to achieve, whilst new business and cyber-security challenges make it of escalating importance. 
+</p>
+
+<p>
+The goal of this thesis is to design a denotational semantics for JavaScript regular expressions and use it to guide the development of an accompanying reference interpreter written in purely functional style. Given the absence of side-effects, the obtained reference interpreter will be amenable to axiomatic reasoning in the style of [4], meaning that one can use the reference interpreter to prove properties of JavaScript regular expressions, such as the correctness of string sanitisers.
+</p>
+
+<p>
+The thesis will consist of three main tasks. First, the student will design a denotational semantics of JavaScript regular expressions. Then, the student will develop a reference interpreter matching to the designed semantics and test it against Test262 [5], the official JavaScript test suite. Finally, the student will use the resulting interpreter to prove the correctness of string sanitisers using simple equational reasoning [6].
+</p> 
+
+
+
+<h3>References</h3>
+<p>
+[1] w3techs.com/technologies/details/cp-javascript <br /> 
+[3] ECMAScript Committee. The 10th Edition of the ECMAScript Language Specification. ECMA. 2019.  <br /> 
+[4] J. Gibbons et al. Just Do It: Simple Monadic Equational Reasoning. ICFP'11. <br /> 
+[5] ECMAScript Committee. Test262 test suite. ECMA. 2017. <br /> 
+[6] G. Gibbons. Calculating Functional Programs. Technical Report. 
+</p>
+
+</body>
+</html> 
