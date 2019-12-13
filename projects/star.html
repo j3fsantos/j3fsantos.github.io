@@ -5,7 +5,7 @@
 
 <p>
 Recent years have witnessed a series of success stories on the application of program analysis and verification techniques to statically-typed programming languages inside world-leading software companies. The most notable example is Infer [1], a separation-logic-based tool developed inside Facebook that is aimed at lightweight bug-finding of C, C++, Java/Android, and Objective C programs. 
-For program analyses to attain proper industrial acknowledgment and uptake, they need to be scalable. Program analyses achieve scalability by being compositional: that is, “the analysis result for a composite program is defined in terms of the analysis results for its parts and a means of combining them” [2]. In fact, compositionality was key for the success of Infer, which analyses millions of lines of code per day as part of Facebook’s code review pipeline. 
+For program analyses to attain proper industrial acknowledgment and uptake, they need to be scalable. Program analyses achieve scalability by being compositional: that is, "the analysis result for a composite program is defined in terms of the analysis results for its parts and a means of combining them" [2]. In fact, compositionality was key for the success of Infer, which analyses millions of lines of code per day as part of Facebook's code review pipeline. 
 Separation logic [3, 4] is a form of program analysis that enables compositional program reasoning. It is at the core of Infer, where it is used for lightweight bug-finding, but it also underpins many academic tools for proving functional correctness properties of programs written in languages as different as C [5, 6], Java [6,7], OCaml [8], and JavaScript [9,10].
 Modern separation logic engines use separation logic formulas to represent the state of their input programs and sophisticated pattern matching techniques to solve entailments between these formulas. These techniques are often described in the literature in a non-deterministic fashion, meaning that they cannot be directly used to guide efficient implementations. 
 </p>
@@ -43,7 +43,7 @@ This project may result in a collaboration with the VetSpec group at Imperial. G
 [12] https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html <br />
 [13] Mistral Contrastin et al. Automatic Reordering for Dataflow Safety for Datalog. PPDP'18. <br />
 [14] E. Rohwedder et al. Mode and Termination Checking for Higher-Order Logic Programs. ESOP'96. <br />
-[15] J. Robinson. A Machine-Oriented Logic Based on the Resolution Principle. Journal of the ACM. 
+[15] J. Robinson. A Machine-Oriented Logic Based on the Resolution Principle. Journal of the ACM. <br />
 [16] https://github.com/mihasighi/smtcomp14-sl/
 </p>
 
