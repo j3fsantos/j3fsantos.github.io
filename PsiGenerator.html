@@ -1,0 +1,50 @@
+<html> 
+
+<body>
+</body> 
+
+<input type="text" id="numeroAluno" /> 
+<button id="b1">Compute Psi</button> 
+<div id="answer"> 
+</div>
+
+
+<script type="text/javascript">
+  function getNumber () { 
+     var n = document.getElementById("numeroAluno").value;
+     return parseInt(n);  
+  }
+ 
+  function computePsis() {
+     var n = getNumber ();
+     var psi1 = n % 5; 
+     var psi2 = Math.floor(n/10) % 5; 
+     var psi3 = Math.floor(n/100) % 5;
+     var psi4 = Math.floor(n/1000) % 5;
+     var psi5 = n % 3;   
+     var psi6 = Math.floor(n/10) % 3;
+     var psi7 = Math.floor(n/100) % 3;
+     var psi8 = Math.floor(n/1000) % 3;
+     
+     showAnswers(psi1, psi2, psi3, psi4, psi5, psi6, psi7, psi8);
+  }
+  
+  function showAnswers(psi1, psi2, psi3, psi4, psi5, psi6, psi7, psi8) { 
+     var str = ""; 
+     str += "Psi1: " + psi1 + "<br />";
+     str += "Psi2: " + psi2 + "<br />";
+     str += "Psi3: " + psi3 + "<br />";
+     str += "Psi4: " + psi4 + "<br />";
+     str += "Psi5: " + psi5 + "<br />";
+     str += "Psi6: " + psi6 + "<br />";
+     str += "Psi7: " + psi7 + "<br />";
+     str += "Psi8: " + psi8;
+      
+     var div = document.getElementById("answer"); 
+     div.innerHTML = str; 
+  }
+
+  var b1 = document.getElementById("b1"); 
+  b1.addEventListener("click", computePsis); 
+</script>
+</html>
