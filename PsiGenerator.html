@@ -1,13 +1,27 @@
 <html> 
+<head>
+<style>
+</style> 
+
+</head> 
 
 <body>
 </body> 
 
+<h3>Calcular Psis</h3> 
 <input type="text" id="numeroAluno" /> 
-<button id="b1">Compute Psi</button> 
+<button id="b1">Calcular Psi</button> 
 <div id="answer"> 
 </div>
 
+<br /> 
+<h3>Validar JSON</h3> 
+<textarea id="json" rows="30" cols="100">Paste your JSON here.</textarea>
+<br /> 
+<button id="b2">Validar JSON</button> 
+<button id="b3">Limpar Resultados</button> 
+<div id="warnings"> 
+</div>
 
 <script type="text/javascript">
   function getNumber () { 
@@ -47,4 +61,327 @@
   var b1 = document.getElementById("b1"); 
   b1.addEventListener("click", computePsis); 
 </script>
+
+
+<script type="text/javascript">
+// Warnings
+var warnings = []; 
+
+/**
+ *  Question A
+ */
+
+function parseA(obj) {
+    var rank_str = "rank_x";
+    var pi_str = "pi_x"; 
+    var ranks = [];  
+    var preds = []; 
+    var incomplete = false; 
+    for (var i=0; i<=9; i++) {
+        var rank_prop = rank_str + i; 
+        var pi_prop = pi_str + i; 
+        
+        if (obj.hasOwnProperty(rank_prop)) {
+            ranks.push(obj[rank_prop]); 
+        } else { incomplete = true }
+
+        if (obj.hasOwnProperty(pi_prop)) {
+            preds.push(obj[pi_prop]); 
+        } else { incomplete = true }
+    }
+    if (incomplete) { 
+        warnings.push("Resolucao do Exercicio Ia incompleta!");  
+    }
+    return {
+        ranks: ranks, 
+        preds: preds
+    }
+}
+
+/**
+ *  Question B
+ */
+
+function parseB(obj) {
+    var low_str = "low"; 
+    var low = []; 
+    var incomplete = false;
+    for (var i=1; i<=6; i++) {
+        var low_prop = low_str + i; 
+        if (obj.hasOwnProperty(low_prop)) {
+            low.push(obj[low_prop]); 
+        } else { incomplete = true }
+    }
+
+    if (incomplete) {
+        warnings.push("Resolucao do Exercicio Ib incompleta!");  
+    }
+
+    var sccs = obj.sccs; 
+    if (! (sccs instanceof Array)) {
+        warnings.push("O campo sccs do Exercidio Ib tem de ser um array"); 
+        sccs = []; 
+    }
+
+    for (var i=0; i< sccs.length; i++) {
+        if (!(sccs[i] instanceof Array)) {
+            warnings.push("O campo sccs[" + i + "] tem do Exercicio Ib tem de ser um array"); 
+            sccs[i] = []; 
+        }
+    }
+
+    for (var i=0; i<sccs.length; i++) {
+        sccs[i].sort(); 
+    }
+    sccs.sort(); 
+
+    return { 
+        low: low, 
+        sccs: sccs
+    }
+}
+
+/**
+ *  Question C
+ */
+
+function parseC(obj) { 
+    var k_str = "key_v"; 
+    var pi_str = "pi_v"; 
+    var nodes = []; 
+    var incomplete = false;
+    for (var i=1; i<=6; i++) {
+        var k_prop = k_str + i; 
+        var pi_prop = pi_str + i;
+        if (!obj.hasOwnProperty(k_prop) || !obj.hasOwnProperty(pi_prop)) { 
+            incomplete = true; 
+        }
+        nodes.push({ 
+            pri: obj[k_prop], 
+            pi: obj[pi_prop]
+        })
+    }
+
+    if (!obj.hasOwnProperty("weightMST")) {
+        incomplete = true; 
+    }
+
+    if (incomplete) {
+        warnings.push("Resolucao do Exercicio Ic incompleta!");  
+    }
+
+    return {
+        nodes: nodes, 
+        cost: obj.weightMST
+    }
+}
+
+/**
+ *  Question D
+ */
+
+function parseD (obj) {
+    var vertice_map = {
+        A: 1, 
+        B: 2, 
+        C: 3, 
+        D: 4, 
+        E: 5, 
+        F: 6
+    };    
+    var incomplete = false;
+
+    var h_str = "h_"; 
+    var heights = []; 
+    for (var prop in vertice_map) { 
+        if (vertice_map.hasOwnProperty(prop)) {
+            var h_prop = h_str + prop; 
+            //console.log(h_prop); 
+            if (obj.hasOwnProperty(h_prop)) {
+                heights.push(obj[h_prop]); 
+            } else {
+                heights.push(null); 
+                incomplete = true; 
+            }
+        }
+    }
+
+    var new_w_str = "new_w_"; 
+    var g = [ null, [], [], [], [], [], []]; 
+    var edges = [ 
+        { from: "A", to: "B" }, 
+        { from: "A", to: "C" },
+        { from: "B", to: "D" },
+        { from: "C", to: "D" },
+        { from: "D", to: "E" }, 
+        { from: "E", to: "F" },
+        { from: "F", to: "A" },
+        { from: "F", to: "C" }
+    ]; 
+    for (var i=0; i<edges.length; i++) {
+        var edge_prop = new_w_str + edges[i].from + "_" + edges[i].to; 
+        if (obj.hasOwnProperty(edge_prop)) { 
+            var w = obj[edge_prop]; 
+            g[vertice_map[edges[i].from]].push({ v: vertice_map[edges[i].to], w: w }); 
+        } else {
+            g[vertice_map[edges[i].from]].push({ v: vertice_map[edges[i].to], w: null });
+            incomplete = true; 
+        }
+    }
+    g.shift(); 
+
+    if (incomplete) {
+        warnings.push("Resolucao do Exercicio Id incompleta!");  
+    }
+
+    return {
+        new_graph: g, 
+        heights: heights
+    }; 
+}
+
+/**
+ *  Question E
+ */
+
+function parseE (obj) {
+    var vertices = ["s", "A", "B", "C", "D", "t" ];
+    var indexes = {
+        s: 1, 
+        A: 2, 
+        B: 3, 
+        C: 4,
+        D: 5,
+        t: 6
+    }; 
+    var h_str = "h_"; 
+    var heights = []; 
+    var incomplete = false;
+    for (var i=0; i<vertices.length; i++) {
+        var h_prop = h_str + vertices[i]; 
+        //console.log (h_prop); 
+        if (obj.hasOwnProperty(h_prop)) {
+            heights.push(obj[h_prop]); 
+        } else { heights.push(null); incomplete = true }
+        heights.push()
+    }
+
+    var new_lst = []; 
+    var lst = obj.L; 
+    if (!(lst instanceof Array)) { 
+        warnings.push("O campo L do Exercicio I.e tem de ser um array!");
+        lst = []; 
+    } else { 
+        for (var i=0; i<lst.length; i++) {
+            if (! (lst[i] instanceof Array)) {
+                warnings.push("O campo L[" + i + "] do Exercicio I.e tem de ser um array!"); 
+                lst[i] = []; 
+            }
+        }
+    }
+    for (var i=0; i<lst.length; i++) {
+       // console.log("i: " + i); 
+        var cur_lst =  lst[i]; 
+        var new_cur_lst = [];
+        new_lst.push(new_cur_lst); 
+        for (var j=0; j<cur_lst.length; j++) {
+            new_cur_lst.push(indexes[cur_lst[j]]);
+        }
+    }
+
+
+    var cut_left, cut_right;
+    var new_cut_left = [], new_cut_right = []; 
+    if (!obj.cut) { 
+        cut_left = [];
+        cut_right = []; 
+        incomplete = true    
+    }  else {
+        if (!obj.cut.left) {
+            cut_left = []; 
+            incomplete = true;
+        }
+        if (!obj.cut.right) {
+            cut_right = []; 
+            incomplete = true;
+        }
+        if (! (obj.cut.left instanceof Array)) {
+            warnings.push("O campo cut.left do exercicio I.e tem de ser um array!"); 
+            cut_left = []; 
+        } else { cut_left = obj.cut.left }
+        if (! (obj.cut.right instanceof Array)) {
+            warnings.push("O campo cut.right do exercicio I.e tem de ser um array!"); 
+            cut_right = []; 
+        } else { cut_right = obj.cut.right }
+    }
+
+    for (var i=0; i<cut_left.length; i++) {
+        new_cut_left.push(indexes[cut_left[i]]); 
+    }
+    new_cut_left.sort(); 
+
+    for (var i=0; i<cut_right.length; i++) {
+        new_cut_right.push(indexes[cut_right[i]]); 
+    }
+    new_cut_right.sort(); 
+
+    if (incomplete) {
+        warnings.push("Resolucao do Exercicio Ie incompleta!");  
+    }
+
+    return {
+        heights: heights, 
+        cut: {
+            left: new_cut_left, 
+            right: new_cut_right
+        }, 
+        L : new_lst, 
+        f_max: obj.f_max
+    }
+
+}
+
+
+function validate () {
+	warnings = []; 
+
+	var textbox = document.getElementById ("json");
+	var data = textbox.value; 
+	var answer; 
+	try {
+		answer = JSON.parse(data);
+		parseA(answer.a);
+		parseB(answer.b); 
+		parseC(answer.c);
+		parseD(answer.d);
+		parseE(answer.e);
+	} catch (e) {
+		warnings.push("JSON mal formado!: " + e.toString()); 
+	}
+	
+	var str = ""; 
+	for (var i=0; i<warnings.length; i++) {
+    	str += warnings[i]; 
+	}
+	
+	if (str !== "") {
+		textbox.value = str; 
+	} else {
+		textbox.value = "JSON bem formado. Bom trabalho!"; 
+	}
+}
+
+function limpar () { 
+	var textbox = document.getElementById ("json");
+	textbox.value = "Paste your JSON here."; 
+} 
+
+var b2 = document.getElementById("b2");
+b2.addEventListener("click", validate); 
+
+var b3 = document.getElementById("b3");
+b3.addEventListener("click", limpar); 
+
+</script> 
+
 </html>
