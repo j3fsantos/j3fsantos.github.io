@@ -347,14 +347,19 @@ function validate () {
 
 	var textbox = document.getElementById ("json");
 	var data = textbox.value; 
+	
+	data = data.replace("NIL", "null"); 
+	data = data.replace("nil", "null"); 
+	data = data.replace("NULL", "null"); 
+		
 	var answer; 
 	try {
 		answer = JSON.parse(data);
-		parseA(answer.a);
-		parseB(answer.b); 
-		parseC(answer.c);
-		parseD(answer.d);
-		parseE(answer.e);
+		if (answer.a) parseA(answer.a);
+		if (answer.b) parseB(answer.b); 
+		if (answer.c) parseC(answer.c);
+		if (answer.d) parseD(answer.d);
+		if (answer.e) parseE(answer.e);
 	} catch (e) {
 		warnings.push("JSON mal formado!: " + e.toString()); 
 	}
