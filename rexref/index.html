@@ -21,7 +21,7 @@
             integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
@@ -303,16 +303,16 @@
             </div>
         </footer>
         <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script>
-        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/esprima@4.0.1/dist/esprima.js"></script>
         <script src="./browserify_dist/compile.js"></script>
         <script src="./browserify_dist/run.js"></script>
-        <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+        <script src="./node_modules/monaco-editor/min/vs/loader.js"></script>
         <script src="./main.js"></script>
         <script>
-            require.config({ paths: { vs: "../node_modules/monaco-editor/min/vs" } });
+            require.config({ paths: { vs: "./node_modules/monaco-editor/min/vs" } });
             var editor;
 
             require(["vs/editor/editor.main"], function () {
