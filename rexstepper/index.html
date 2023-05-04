@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+        <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <title>Rex Stepper</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand brand">R<span class="brand-color">ex</span> Stepper</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span><i class="fas fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Expressions
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <div class="dropdown-title">Assertions</div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="123aaa123" data-comment="User thinks the expression matches strings that start with at least one digit, and end with at least one digit.">
+                            <a href="https://stackoverflow.com/questions/16472301/conflict-with-understanding-a-javascript-regular-expression" target="_blank">SO_16472301</a>
+                            <span>/^[0-9]+$/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="99ll_#$%" data-comment="Should match whole strings comprised only of numbers, letters and underscores.">
+                            <a href="https://stackoverflow.com/questions/18861/what-did-i-do-wrong-here-javascript-regex" target="_blank">SO_18861</a>
+                            <span>/^([a-zA-Z0-9_])+/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="2" data-value='["12345","12345ABC"]' data-comment="User thinks the first execution should match as a whole and the second should not.">
+                            <a href="https://stackoverflow.com/questions/49292762/why-my-regular-expression-does-not-work-in-javascript-it-works-in-java" target="_blank">SO_49292762</a>
+                            <span>/\d+/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="https://www,google.com" data-comment="User thinks this string should not match because of the comma on the URL">
+                            <a href="https://stackoverflow.com/questions/30441151/regular-expression-wrong-match" target="_blank">SO_30441151</a>
+                            <span>/(https|http)?:\/\/(?:\w[\-\w.]+)(?:\/[\-\w+&@#\/%=~_|!:,.;]*)?(?:\?[\-A-Z0-9+&@#\/%=~_|!:,.;]*)?/i</span>
+                          </div>
+
+                          <div class="dropdown-divider"></div>
+
+                          <div class="dropdown-title">Character Ranges</div>
+                          
+                          <a  href="#"></a>
+
+                          <div class="dropdown-item" data-mult="1" data-value="g()()GI3" data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/53987537/what-is-the-correct-regex-pattern-for-this" target="_blank">SO_53987537</a>
+                            <span>/^[gG][o0O()\[\]{}][o0O()\[\]{}][gG][lLI][eE3]/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="[fugazi]" data-comment="User thinks this string should not match because it should not match the brackets.">
+                            <a href="https://stackoverflow.com/questions/47207164/why-does-this-regular-expression-return-true-in-javascript" target="_blank">SO_47207164</a>
+                            <span>/^[A-z0-9]+$/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="hello123" data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/32863970/name-should-have-albhabet-only" target="_blank">SO_32863970</a>
+                            <span>/^[a-zA-Z]/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="s8bgBQYPmUaNjkToXCJLAwAA" data-comment="User thinks the expression would match if the string contains one digit.">
+                            <a href="https://stackoverflow.com/questions/2211788/java-regex-match-error" target="_blank">SO_2211788</a>
+                            <span>/[0-9]/</span>
+                          </div>
+
+                          <div class="dropdown-divider"></div>
+                          
+                          <div class="dropdown-title">Quantifiers</div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="%AB" data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/1413587/regular-expression-greedy-match-not-working-as-expected" target="_blank">SO_1413587</a>
+                            <span>/^%?\S{3}/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value='say("hello World");say("hello World 1");' data-comment="User wants to capture function call names and arguments, but when there are two function call in the same line it does not work as expected.">
+                            <a href="https://stackoverflow.com/questions/49671575/regex-matches-wrong" target="_blank">SO_49671575</a>
+                            <span>/\b(.*)\n*\s*\((\n*\s*.*\n*\s*)\)\n*\s*;/</span>
+                          </div>
+
+                          <!-- below : Matches with many lines... -->
+                          <div class="dropdown-item" data-mult="1" data-multi_line="true" data-value="Label0: mov     variable0,WREG             ;Some comment
+                          mov     W0,variable1
+                      Label1: btsc    variable2,#1               ;Some other comment
+                          bra     label2" data-comment="User expects to match 'Label1: btsc    variable2', but the match also contains the line above: 'mov     W0,variable1'">
+                            <a href="https://stackoverflow.com/questions/37621986/non-greedy-regular-expression-not-matching-what-i-expected" target="_blank">SO_37621986</a>
+                            <span>/^[^;]*?variable2/</span>
+                          </div>
+                          
+                          <div class="dropdown-divider"></div>
+
+                          <div class="dropdown-title">Special Characters</div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="1€abcdefG" data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/37954914/regex-to-accept-3-out-of-4-rules" target="_blank">SO_37954914</a>
+                            <span>/^(?=.*?[A-Z])(?=.*?[a-z])(?=(.*?[0-9])|(.*?[@#&~])).{8,20}$/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value=":isakmpkeymanager ()" data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/40316670/awk-regexp-when-not-match" target="_blank">SO_40316670</a>
+                            <span>/:.+ \(.[^)]*$/</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="Good morning. Good afternoon. Good day." data-comment="User thinks this string should not match.">
+                            <a href="https://stackoverflow.com/questions/60142675/what-went-wrong-with-a-regular-expression" target="_blank">SO_60142675</a>
+                            <span>/Good .+\./</span>
+                          </div>
+
+                          <div class="dropdown-divider"></div>
+
+                          <div class="dropdown-title">Flags</div>
+
+                          <!------------------------------------------------------------------------------------------------------------------->
+
+                          <!-- below : 2 execs... -->
+                          <div class="dropdown-item" data-mult="2" data-value='["1","1"]' data-comment="User does not understand why the results of the two executions alternate (first one matches and the other does not)">
+                            <a href="https://stackoverflow.com/questions/2851308/why-does-my-javascript-regex-test-give-alternating-results" target="_blank">SO_2851308</a>
+                            <span>/\d/g</span>
+                          </div>
+
+                          <div class="dropdown-item" data-mult="2" data-value='["Foo Bar","Foo Bar"]' data-comment="User does not understand why the results of the two executions alternate (first one matches and the other does not)">
+                            <a href="https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results" target="_blank">SO_1520800</a>
+                            <span>/Foo B/gi</span>
+                          </div>
+
+                          <div class="dropdown-divider"></div>
+
+                          <div class="dropdown-title">Groups</div>
+
+                          <div class="dropdown-item" data-mult="1" data-value="Price: 123 dollar." data-comment="User needs the capture groups to capture [123 dollar, 123, dollar]. Watch the Output tab to see what was actually captured.">
+                            <a href="https://stackoverflow.com/questions/12224711/a-mistake-in-regex" target="_blank">SO_12224711</a>
+                            <span>/((\d+\.?\d+?)|(\d{1,3}(\,\d{3})+)) *([a-zA-Z]+)/</span>
+                          </div>
+
+<!-- 
+                          <div class="dropdown-title">???</div>
+                          <a class="dropdown-item" data-mult="1" data-value="4444" data-comment="User thinks the expression should only match a maximum of 3 digits" href="#">/^-?([0-9]{0,3}$|[0-9]{0,2}\.?[0-9]{0,1}$)/</a>
+                          <a class="dropdown-item" data-mult="1" data-value='{key: value, name: "John", age: 17}' data-comment="User thinks it should capture [key, value, name, age] but [value] is not captured." href="#">/(?:\s*(\w+)\s*:)|(?:\:\s*(\w+)\s*\,)/</a>
+                          -->
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://youtu.be/tB0NBB5GLeg" target="_blank">
+                            Demo
+                        </a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-toggle="modal" data-target="#modalAuthors">
+                            Authors
+                        </a>
+                      </li>
+                </ul>
+            </div>
+        </nav>
+        <section class="popup">
+                <div>
+                    <div class="text">Our tool does not support your browser!</div>
+                    
+                    <div class="browser">
+                        <div>Supported browsers:</div>
+                        <div class="browser-list">
+                            <i class="fab fa-chrome"></i>
+                            <i class="fab fa-firefox-browser"></i>
+                            <i class="fab fa-edge"></i>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <main>
+            <div class="container">
+                <div id="section1">
+                    <div class="regularExpression">
+                        <label for="text_input">Regular Expression</label>
+                        <div name="text_input" id="text_input" class="fixedHeight"></div>
+                        <div id="message" class="icon">Not Compiled</div>
+                        <div class="buttonGroup execButtons">
+                            <button class="debugNavigation debugDoubleLeft exec" id="ExecLeft" onclick="updateExec('left', this)" disabled>
+                                Previous
+                                <p class="debugNavigationSecondLine">Regular Expression</p>
+                            </button>
+                            <button class="debugNavigation debugDoubleRight exec" id="ExecRight" onclick="updateExec('right', this)" disabled>
+                                Next
+                                <p class="debugNavigationSecondLine">Regular Expression</p>
+                            </button>
+                        </div>
+                        <button class="buttons" onclick="compile()">Compile</button>
+                    </div>
+                    <div id="tabs">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    id="compiledJS-tab"
+                                    data-toggle="tab"
+                                    href="#compiledJS"
+                                    role="tab"
+                                    aria-controls="compiledJS"
+                                    aria-selected="true"
+                                    >Compiled JS</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    id="output-tab"
+                                    data-toggle="tab"
+                                    href="#output"
+                                    role="tab"
+                                    aria-controls="output"
+                                    aria-selected="false"
+                                    >Output</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    id="debug-tab"
+                                    data-toggle="tab"
+                                    href="#debug"
+                                    role="tab"
+                                    aria-controls="debug"
+                                    aria-selected="false"
+                                    >Code-Step</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tree-tab" data-toggle="tab" href="#tree" role="tab" aria-controls="tree" aria-selected="false"
+                                    >Tree-Step</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="compiledJS" role="tabpanel" aria-labelledby="compiledJS-tab">
+                                <pre class="tab_window" id="compilation"></pre>
+                            </div>
+                            <div class="tab-pane fade" id="output" role="tabpanel" aria-labelledby="output-tab">
+                                <pre class="tab_window">
+                                    <div  id="runtime">
+                                        <div id="runtime-div"><span class="runtime-title">Match: </span><span id="runtime-match"></span></div>
+                                        <div id="runtime-div"><span class="runtime-title">Groups: </span><div id="runtime-groups"></div></div>
+                                    </div>
+                                </pre>
+                            </div>
+                            <div class="tab-pane fade" id="debug" role="tabpanel" aria-labelledby="debug-tab">
+                                <pre class="tab_window" id="debugWindow"></pre>
+                                <div class="buttonGroup firstLast">
+                                    <button class="debugNavigation debugDoubleLeft" id="FirstState" onclick="changeState('first')" disabled>
+                                        First State
+                                    </button>
+                                    <button class="debugNavigation debugDoubleRight" id="LastState" onclick="changeState('last')" disabled>
+                                        Last State
+                                    </button>
+                                </div>
+                                <div class="buttonGroup">
+                                    <button class="debugNavigation debugDoubleLeft" id="BPLeft" onclick="updateDebugger('left', true, this)" disabled>
+                                        Previous
+                                        <p class="debugNavigationSecondLine">Break Point</p>
+                                    </button>
+                                    <button class="debugNavigation debugLeft" id="StepLeft" onclick="updateDebugger('left', false, this)" disabled>
+                                        Previous
+                                        <p class="debugNavigationSecondLine">Step</p>
+                                    </button>
+                                    <button class="debugNavigation debugRight" id="StepRight" onclick="updateDebugger('right',false, this)" disabled>
+                                        Next
+                                        <p class="debugNavigationSecondLine">Step</p>
+                                    </button>
+                                    <button
+                                        class="debugNavigation debugDoubleRight"
+                                        id="BPRight"
+                                        onclick="updateDebugger('right', true, this)"
+                                        disabled
+                                    >
+                                        Next
+                                        <p class="debugNavigationSecondLine">Break Point</p>
+                                    </button>
+                                </div>
+                                <div class="buttonGroup">
+                                    <button
+                                        class="debugNavigation debugDoubleLeft iteration"
+                                        id="IterationLeft"
+                                        onclick="updateIteration('left', this)"
+                                        disabled
+                                    >
+                                        Previous
+                                        <p class="debugNavigationSecondLine">Iteration</p>
+                                    </button>
+                                    <div id="iterationCount">
+                                        <p class="iterationSecondLine">Iteration</p>
+                                        <p>x/y</p>
+                                    </div>
+                                    <button
+                                        class="debugNavigation debugDoubleRight iteration"
+                                        id="IterationRight"
+                                        onclick="updateIteration('right', this)"
+                                        disabled
+                                    >
+                                        Next
+                                        <p class="debugNavigationSecondLine">Iteration</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tree" role="tabpanel" aria-labelledby="tree-tab">
+                                <pre class="tab_window" id="treeWindow"></pre>
+                                <div id="treeOps">
+                                    <button class="buttons" id="toggleExpansion" style="display: inline-block;">Expand Tree</button>
+                                    <button class="buttons" id="toggleFullscreen" style="display: inline-block;">Toggle Fullscreen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="container help">
+            <h6>Help</h6>
+            <div id="help-tags">
+                <div>
+                    <span class="icon icon_help" id="start_help"></span>
+                    <span>Start of match</span>
+                </div>
+                <div>
+                    <span class="icon icon_help" id="end_help"></span>
+                    <span>End of match</span>
+                </div>
+                <div>
+                    <span class="icon icon_help" id="match_help">h</span>
+                    <span>Matched sub-expression</span>
+                </div>
+                <div>
+                    <span class="icon icon_help" id="match_inner_help">[<span>h</span>elp]</span>
+                    <span>Sub-expression currently being matched inside a Character Range.</span>
+                </div>
+                <div>
+                    <span class="icon icon_help" id="failed_match_help">h</span>
+                    <span>Failed sub-expression match. The compiler will backtrack to a previous state after this.</span>
+                </div>
+                <div>
+                    <span class="icon icon_help" id="failed_help">Failed</span>
+                    <span>Current iteration failed matching and has no other paths.</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="copy">
+                <span>&copy;</span>
+                <span id="copyright"></span>
+                <span>
+                    R<span class="brand-color">ex </span>
+                </span>
+                <span>Stepper</span>
+            </div>
+            <div class="browser-support">
+                <span>Supported browsers</span>   
+                <i class="fab fa-chrome"></i>
+                <i class="fab fa-firefox-browser"></i>
+                <i class="fab fa-edge"></i>
+            </div>
+        </footer>
+
+
+        <div class="modal fade" id="modalAuthors" tabindex="-1" role="dialog" aria-labelledby="modalLabelAuthors" aria-hidden="true" style="z-index: 99999;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabelAuthors">Authors</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <li>Rui Abreu</li>
+                        <li>Luís Almeida</li>
+                        <li>José Fragoso Santos</li>
+                        <li>Miguel Gonzaga (Maintainer)</li>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/esprima@4.0.1/dist/esprima.js"></script>
+        <script src="./browserify_dist/compile.js"></script>
+        <script src="./browserify_dist/run.js"></script>
+        <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+        <script src="./main.js"></script>
+        <script src="./gnz.js"></script>
+        <script>
+            require.config({ paths: { vs: "../node_modules/monaco-editor/min/vs" } });
+            var editor;
+
+            require(["vs/editor/editor.main"], function () {
+                monaco.editor.defineTheme("myTheme", {
+                    base: "vs",
+                    inherit: true,
+                    rules: [{ background: "f4f4f4" }],
+                    colors: {
+                        "editor.background": "#f4f4f4",
+                        "editorCursor.foreground": "#073f51",
+                        "editor.lineHighlightBackground": "#47bdda30",
+                        "editorLineNumber.foreground": "#47bdda",
+                        "editor.selectionBackground": "#1487af70",
+                        "editor.inactiveSelectionBackground": "#1487af70",
+                    },
+                });
+
+                monaco.editor.setTheme("myTheme");
+
+                //value: "/* Insert regular expression here */ \nvar a = /(a*)\\1b/; \na.exec('aaab')",
+                ///* Insert regular expression here */ \nvar a = /(a*)\\1[!]b/; \na.exec('aaab')
+                /*
+                const expr1 = "var a = /bb[a-zA-Z]+/; \na.exec('bbaZ') \n\n";
+                const expr2 = "var b = /abc/; \nb.exec('abc')\n\n";
+                const expr3 = "var b = /a[bc\\.\\+]+/; \nb.exec('ab.+')\n\n";
+                const expr4 = "var b = /(a*)\\1b/; \nb.exec('aaab')";
+                */
+                var b = /([^\.@]*(\.[^\.@])*)@/;
+b.exec("ab@")
+                 const expp =
+                     'var b = /(([^<>\\(\\)\\[\\]\\.,;:\\s@\\"]*(\\.[^<>\\(\\)\\[\\]\\.,;:\\s@\\"])*)|(\\".+\\"))@(([[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z-0-9]+\\.)+[a-zA-Z]{2,}))/;\nb.exec("luis.ab@hotmail.com")';
+                // const expp = "var b = /([^\\.@]*(\\.[^\\.@])*)@/ \nb.exec('ab@')\n\n";
+                editor = monaco.editor.create(document.getElementById("text_input"), {
+                    value: expp,
+                    language: "javascript",
+                    lineNumbers: "on",
+                    vertical: "auto",
+                    horizontal: "auto",
+                    verticalScrollbarSize: 10,
+                    horizontalScrollbarSize: 10,
+                    automaticLayout: true,
+                    renderLineHighlight: "none",
+                    readOnly: false,
+                    minimap: {
+                        enabled: false,
+                    },
+                    fontSize: 14,
+                    lineHeight: 19,
+                });
+            });
+        </script>
+    </body>
+</html>
